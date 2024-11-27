@@ -112,18 +112,24 @@ contarNumero();
 
 // EJERCICIO 5
 /*
-$nota = 60;
+function nota(){
+
+ do{$nota = readline("Escribe tu nota: ");}while($nota<0||$nota>100);
 
 if ($nota<33){
-   echo "Reprobado";
+   return "reprobado";
 } else if ($nota<=44){
-    echo "Tercera division";
+    return "en Tercera division";
 }else if ($nota<=59){
-    echo "Segunda division";
+    return "en Segunda division";
 }else {
-    echo "Primera division";
+    return "en Primera division";
 }
 
+}
+
+$nota=nota();
+echo  "Estás $nota";
 */
 
 // EJERCICIO 6
@@ -138,7 +144,8 @@ function isBitten(){
     }
 }
 
-isBitten()
+isBitten();
+
 */
 
 //**************************** NIVEL 2 ****************************
@@ -147,7 +154,7 @@ isBitten()
 /*
 function precioLlamada (){
 
-    $duracion = readline ("Cuantos minutos ha durado la llamada?");
+    $duracion = readline ("Cuantos minutos ha durado la llamada?: ");
 
     if  ($duracion<3){
         $costo = 10;
@@ -155,10 +162,11 @@ function precioLlamada (){
         $costo = 10 + ($duracion-3)*5;
     }
 
-    if ($costo>100){
+    if ($costo>=100){
         $costoEU = ($costo/100);
         return "$costoEU €";
-    }else{return "$costo centimos";
+    }else{
+        return "$costo centimos";
     }
     
 }
@@ -168,8 +176,8 @@ function precioLlamada (){
 */
 
 //EJERCICIO 2
-
 /*
+
 function compra(){
 $chocolate = 1;
 $chicles = 0.5;
@@ -184,7 +192,7 @@ $objeto = readline("Que quieres comprar?\n
 0. Nada más\n
 1. Chocolate - 1€\n
 2. Chicles - 0.5€\n
-3. Caramelos - 1.5€\n");
+3. Caramelos - 1.5€");
 
 if ($objeto==!0){
     do{$cantidad = readline ("Cuantos quieres? ");}while($cantidad<0);}
@@ -218,10 +226,12 @@ return $subtotal;
 
 $total = compra();
 echo "El total es de $total €";
+
 */
 
 //**************************** NIVEL 3****************************
 
+/*
 $lista =array();
 $numero = (int)readline ("Introduce un numero: ");
 $i=2;
@@ -242,6 +252,8 @@ foreach ($lista as $n){
 echo "\n";
 foreach ($lista as $n){
         echo $n,",";}
+
+        */
 ?>
 
 
