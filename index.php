@@ -1,7 +1,7 @@
 <?php
 
 // NIVEL 1
-
+/*
 // EJERCICIO 1 Y 2
 $texto = "Hello, World";
 $entero= 25;
@@ -55,7 +55,8 @@ echo "El doble de X --> ", $x*2, " | Y --> ",$y*2, " | M -->", $m*2," | N --> ",
 echo "Suma total --> ", $x+$y+$m+$n . PHP_EOL;
 echo "Producto total --> ", $x*$y*$m*$n . PHP_EOL;
 
-/*
+
+
 function Calculadora(){
     $number = (int) readline("Introduzca el primer numero: ");
     $number2 = (int) readline("Introduzca el segundo numero: ");
@@ -221,7 +222,26 @@ echo "El total es de $total €";
 
 //**************************** NIVEL 3****************************
 
+$lista =array();
+$numero = (int)readline ("Introduce un numero: ");
+$i=2;
 
+if ($numero<$i){
+    echo "0,1";}
+
+else{
+for ($i; $i<=$numero; $i++){
+    array_push($lista, $i);
+}}
+
+foreach ($lista as $n){
+    echo $n,",";}
+
+
+
+echo "\n";
+foreach ($lista as $n){
+        echo $n,",";}
 ?>
 
 
