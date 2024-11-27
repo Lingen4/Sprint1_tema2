@@ -198,25 +198,12 @@ function precioLlamada (){
 //EJERCICIO 2
 /*
 
-function compra(){
-$chocolate = 1;
-$chicles = 0.5;
-$caramelos = 1.5;
+
+$total=0;
+
+function compra($objeto, $cantidad){
 
 $subtotal=0;
-
-
-
-do{
-$objeto = readline("Que quieres comprar?\n
-0. Nada más\n
-1. Chocolate - 1€\n
-2. Chicles - 0.5€\n
-3. Caramelos - 1.5€");
-
-if ($objeto==!0){
-    do{$cantidad = readline ("Cuantos quieres? ");}while($cantidad<0);}
-
 
 switch ($objeto) {
     case 0:
@@ -237,14 +224,29 @@ switch ($objeto) {
     
 }
 
-echo "\nEl subtotal es de $subtotal €\n";
-
-}while($objeto==!0);
-
 return $subtotal;
 }
 
-$total = compra();
+
+do{
+    $objetoIntro = readline("Que quieres comprar?\n
+    0. Nada más\n
+    1. Chocolate - 1€\n
+    2. Chicles - 0.5€\n
+    3. Caramelos - 1.5€");
+
+    if ($objetoIntro==!0){
+        do{$cantidadIntro = readline ("Cuantos quieres? ");}while($cantidadIntro<0);}
+    
+$subtotal = compra($objetoIntro, $cantidadIntro);
+
+echo "\nEl subtotal es de $subtotal €\n";
+
+$total +=$subtotal;
+
+}while($objetoIntro==!0);
+
+
 echo "El total es de $total €";
 
 */
