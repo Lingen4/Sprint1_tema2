@@ -142,7 +142,84 @@ isBitten()
 
 //**************************** NIVEL 2 ****************************
 
+//EJERCICIO 1
+/*
+function precioLlamada (){
 
+    $duracion = readline ("Cuantos minutos ha durado la llamada?");
+
+    if  ($duracion<3){
+        $costo = 10;
+    }else{
+        $costo = 10 + ($duracion-3)*5;
+    }
+
+    if ($costo>100){
+        $costoEU = ($costo/100);
+        return "$costoEU €";
+    }else{return "$costo centimos";
+    }
+    
+}
+
+ $precio = precioLlamada();
+ echo "El costo ha sido de $precio";
+*/
+
+//EJERCICIO 2
+
+/*
+function compra(){
+$chocolate = 1;
+$chicles = 0.5;
+$caramelos = 1.5;
+
+$subtotal=0;
+
+
+
+do{
+$objeto = readline("Que quieres comprar?\n
+0. Nada más\n
+1. Chocolate - 1€\n
+2. Chicles - 0.5€\n
+3. Caramelos - 1.5€\n");
+
+if ($objeto==!0){
+    do{$cantidad = readline ("Cuantos quieres? ");}while($cantidad<0);}
+
+
+switch ($objeto) {
+    case 0:
+        echo "Adios\n";
+        break;
+    case 1:
+        $subtotal += 1*$cantidad;
+        break;
+    case 2:
+        $subtotal += 0.5*$cantidad;
+        break;
+    case 3:
+        $subtotal += 1.5*$cantidad;
+        break;
+    default:
+        echo "Parametro no reconocido\n";
+        break;
+    
+}
+
+echo "\nEl subtotal es de $subtotal €\n";
+
+}while($objeto==!0);
+
+return $subtotal;
+}
+
+$total = compra();
+echo "El total es de $total €";
+*/
+
+//**************************** NIVEL 3****************************
 
 
 ?>
