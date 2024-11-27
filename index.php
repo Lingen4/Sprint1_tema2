@@ -1,6 +1,5 @@
 <?php
-
-// NIVEL 1
+//**************************** NIVEL 1 ****************************
 /*
 // EJERCICIO 1 Y 2
 $texto = "Hello, World";
@@ -23,7 +22,7 @@ echo "\nConcatenación con espacio: ", $texto,". ", $phptexto;
 echo "\nConcatenación sin espacio: ", $texto . $phptexto;
 
 
-// EJERCICIO 3 
+// EJERCICIO 3A
 
 $x= 3;
 $y= 10;  
@@ -56,11 +55,13 @@ echo "Suma total --> ", $x+$y+$m+$n . PHP_EOL;
 echo "Producto total --> ", $x*$y*$m*$n . PHP_EOL;
 
 
+//EJERCICIO 3B
 
-function Calculadora(){
-    $number = (int) readline("Introduzca el primer numero: ");
-    $number2 = (int) readline("Introduzca el segundo numero: ");
-    $valor = readline("Introduzca la operación a realizar: ");
+
+
+function Calculadora($number, $number2, $valor)
+{
+
 
     if ($valor == '+') {
         $total = $number + $number2;
@@ -69,52 +70,61 @@ function Calculadora(){
     } elseif ($valor == '*') {
         $total = $number * $number2;
     } elseif ($valor == '/') {
-        if($number2 == 0){
-            echo "No se puede dividir por 0";
-        }else{
-        $total = $number / $number2;
-    }
+        if ($number2 == 0) {
+            return "No se puede dividir por 0";
+        } else {
+            $total = $number / $number2;
+        }
     } elseif ($valor == '%') {
-        $total = $number % $number2;
+        if ($number2 == 0) {
+            return "No se puede hacer modulo de 0";
+        } else {
+            $total = $number % $number2;
+        }
     } else {
-        echo "Operación no válida";
+        return "Operación no válida";
     }
-   
+
+    return $total;
 }
 
-$total = Calculadora();
+do {
+    $numero1 = (int) readline("\nIntroduzca el primer numero: ");
+    $numero2 = (int) readline("Introduzca el segundo numero: ");
+    $operador = readline("Introduzca la operación a realizar: ");
 
-echo "Resultado: $total";
-*/
+    $total = Calculadora($numero1, $numero2, $operador);
+
+    echo "Resultado: $total";
+
+    $salir = readline("\n 0 para salir, cualquier tecla para otra operación");
+} while ($salir !== '0');
 
 // EJERCICIO 4
-/*
-function contarNumero(){
 
-    $numero = readline("¿Hasta que número quieres contar?: ");
+function contarNumero($numero, $pasos){
 
     if (is_numeric($numero)==false){
         $numero = 10;
     }else{
         $numero = (int)$numero;
     }
-
-    $pasos = (int) readline("De cuanto en cuanto quieres contar?: ");
-
+   
     for ( $i=0; $i<=$numero; $i+=$pasos){
         echo $i . "\n";
     }
 }
 
-contarNumero();
-*/
+$numeroTope = readline("¿Hasta que número quieres contar?: ");
+$pasosIntro = (int) readline("De cuanto en cuanto quieres contar?: ");
+
+contarNumero($numeroTope,$pasosIntro);
+
 
 
 // EJERCICIO 5
-/*
-function nota(){
 
- do{$nota = readline("Escribe tu nota: ");}while($nota<0||$nota>100);
+function nota($nota){
 
 if ($nota<33){
    return "reprobado";
@@ -128,25 +138,35 @@ if ($nota<33){
 
 }
 
-$nota=nota();
+do{$introNota = readline("Escribe tu nota: ");}while($introNota<0||$introNota>100);
+
+$nota=nota($introNota);
+
 echo  "Estás $nota";
-*/
+
 
 // EJERCICIO 6
-/*
-function isBitten(){
-    $bit= rand(0,1);
+
+
+
+function isBitten($bit){
+    
 
     if (!$bit){
-        echo "Acaricias a Charlie, se deja";
+        echo "Acaricias a Charlie, se deja\n";
     }else{
-        echo "Acaricias a Charlie, te muerde";
+        echo "Acaricias a Charlie, te muerde\n";
     }
 }
 
-isBitten();
+for ($i=0; $i<10;$i++){
+    $bit= rand(0,1);
+    isBitten($bit);
+}
 
 */
+
+
 
 //**************************** NIVEL 2 ****************************
 
@@ -254,7 +274,3 @@ foreach ($lista as $n){
         echo $n,",";}
 
         */
-?>
-
-
-
