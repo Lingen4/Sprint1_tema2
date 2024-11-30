@@ -253,44 +253,61 @@ echo "El total es de $total €";
 
 //**************************** NIVEL 3****************************
 
-/*
-<?php
+
+
 //**************************** NIVEL 3 ****************************
 // EJERCICIO 1
 
-$lista =array();
-$numero = (int)readline ("Introduce un numero: ");
+$lista = [];
+$numero = (int)readline("Introduce un numero: ");
+
+for ($i = 2; $i <= $numero; $i++) {
+    array_push($lista, $i);
+}
 
 
-for ($i=2; $i<=$numero; $i++){
-    array_push($lista, $i);}
-
-
-function cribaPrimos(&$lista){
+function cribaPrimos(&$lista)
+{
+    $indice = 0;
     
-$ultimoNumero = end($lista);
 
-foreach ($lista as $n){
-    
-if ($n%2==0){
-    unset($n);
-}}
+    while ($lista[$indice] ** 2 <= end($lista)) {
 
-foreach($lista as $n){
-    if ($n**2<$ultimoNumero){
-        if($n%($lista[0])==0){  
-            unset($n);
-        }else{
-            return;
+        $primerNumero = $lista[$indice];
+
+        foreach ($lista as $key => $n) {
+            if ($n != $primerNumero && $n % $primerNumero == 0) {
+                unset($lista[$key]);
+            }
         }
+
+        $lista = array_values($lista);
+        $indice++;
     }
+
+    return $lista;
 }
-}
 
-cribaPrimos($lista);
+$nuevalista = cribaPrimos($lista);
 
-print_r($lista);
+print_r($nuevalista);
 
-?>
 
-        */
+
+/*
+    $salir = false;
+    while (!$salir) {
+        $ultimoNumero = end($lista);
+        $primerNumero = reset($lista);
+
+        foreach ($lista as &$n) {
+            while ($primerNumero ** 2 < $ultimoNumero) {
+                if ($n % $primerNumero == 0 && $n != $primerNumero) {
+                    $n = null;
+                    $lista = array_filter($lista, fn($numero) => $numero !== null);
+                } else {
+                    $salir = true;
+                }
+            }
+        }
+    }*/
