@@ -254,25 +254,43 @@ echo "El total es de $total €";
 //**************************** NIVEL 3****************************
 
 /*
+<?php
+//**************************** NIVEL 3 ****************************
+// EJERCICIO 1
+
 $lista =array();
 $numero = (int)readline ("Introduce un numero: ");
-$i=2;
 
-if ($numero<$i){
-    echo "0,1";}
 
-else{
-for ($i; $i<=$numero; $i++){
-    array_push($lista, $i);
+for ($i=2; $i<=$numero; $i++){
+    array_push($lista, $i);}
+
+
+function cribaPrimos(&$lista){
+    
+$ultimoNumero = end($lista);
+
+foreach ($lista as $n){
+    
+if ($n%2==0){
+    unset($n);
 }}
 
-foreach ($lista as $n){
-    echo $n,",";}
+foreach($lista as $n){
+    if ($n**2<$ultimoNumero){
+        if($n%($lista[0])==0){  
+            unset($n);
+        }else{
+            return;
+        }
+    }
+}
+}
 
+cribaPrimos($lista);
 
+print_r($lista);
 
-echo "\n";
-foreach ($lista as $n){
-        echo $n,",";}
+?>
 
         */
