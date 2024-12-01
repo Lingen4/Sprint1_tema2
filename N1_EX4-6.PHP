@@ -6,7 +6,7 @@
 function contarNumero(int $numero = 10, int $pasos = 2): void
 {
 
-    echo "Se ha contando de $pasos en $pasos hasta $numero";
+    echo "Se va a contar de $pasos en $pasos hasta $numero";
 
     for ($i = 0; $i <= $numero; $i += $pasos) {
         echo  "\n" . $i;
